@@ -108,9 +108,32 @@ document.addEventListener('DOMContentLoaded', function(){
       scrub: 3,
     },
   });
-  tl2.to(".main", {
-    backgroundColor: "#fff",
+
+
+  let tl5 = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".page1 h1",
+      scroller: ".main",
+      // markers:true,
+      start: "top 10%",
+      end: "top 70%",
+      scrub: 3,
+    },
   });
+
+
+    const isMobile = window.innerWidth < 768
+    if(isMobile){
+      tl5.to(".main", {
+        backgroundColor: "#fff"
+      })
+    }else {
+      tl2.to(".main", {
+        backgroundColor: "#fff",
+      });
+    }
+
+  
 
   let tl3 = gsap.timeline({
     scrollTrigger: {
@@ -124,9 +147,31 @@ document.addEventListener('DOMContentLoaded', function(){
   });
 
 
-  tl3.to(".main", {
-    backgroundColor: "#0F0D0D",
+  let tl6 = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".page1 h1",
+      scroller: ".main",
+      // markers:true,
+      start: "top -200%",
+      end: "top -220%",
+      scrub: 3,
+    },
   });
+
+  if(isMobile){
+    tl6.to(".main", {
+      backgroundColor: "#0F0D0D",
+    });
+  }else{
+    tl3.to(".main", {
+      backgroundColor: "#0F0D0D",
+    });
+  }
+
+
+
+
+  
 
   let tl4 = gsap.timeline({
     scrollTrigger: {
@@ -142,6 +187,7 @@ document.addEventListener('DOMContentLoaded', function(){
   tl4.to(".main", {
     backgroundColor: "#EDBFFF",
   });
+  
 
 
 
